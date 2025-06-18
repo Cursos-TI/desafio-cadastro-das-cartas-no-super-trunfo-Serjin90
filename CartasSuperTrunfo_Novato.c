@@ -15,7 +15,7 @@ int main(void){
     printf("\tCADASTRO DE CARTAS SUPER TRUNFO\n");
     printf("\t===============================\n\n");
     printf("Cadastro CARTA 1\n");
-    printf("Digite o Estado, com 1 caracter apenas. Pressione ENTER para confirmar.\n");
+    printf("Digite o Estado, com 1 caractere apenas. Pressione ENTER para confirmar.\n");
     printf("[Digite uma letra (entre A e H)]\n");
     scanf("%c", &Estado1);
     printf("Digite o código da carta, com 3 caracteres. Pressione ENTER para confirmar.\n");
@@ -24,15 +24,15 @@ int main(void){
 /* No 'scanf' acima, atribui-se na expressão de controle um especificador de tamanho máximo de caracteres
    a serem lidos, evitando um estouro na string "Cdg_Carta1" caso haja excesso de caracteres digitados. */
     scanf("%*c");
-/* O 'scanf' acima, utilizando um modificador de supressão/exclusão de caracter, serve para
+/* O 'scanf' acima, utilizando um modificador de supressão/exclusão de caractere, serve para
    limpar o '\n' do buffer de entrada de dados e não causar um problema no 'fgets' abaixo.  */
     printf("Digite o nome da Cidade. Pressione ENTER para confirmar.\n");
     fgets(Nome_Cidade1, sizeof(Nome_Cidade1), stdin);
-/* Opta-se por usar o 'fgets', na linha acima, para lidar melhor com a entrada de nomes com espaços.
+/* Opta-se por usar o 'fgets', na linha acima, para lidar melhor com a entrada de nomes com espaços,
    haja vista que o 'scanf' interrompe a leitura ao encontrar um tab, whitespace ou newline.*/
     Nome_Cidade1[strcspn(Nome_Cidade1, "\n")] = '\0';
-/* Instrução acima utiliza uma função, que procura certo caracter e retorna a posição no vector/string,
-   para modificar o '\n'por um '\0' na string 'Nome_Cidade1' e não "poluir" a impressão em tela.  */     
+/* Instrução acima utiliza uma função, que procura certo caractere e retorna sua posição no vector/string,
+   para modificar o '\n' por um '\0' na string 'Nome_Cidade1' e não "poluir" a impressão em tela.  */     
     printf("Digite o número total de habitantes da cidade. Pressione ENTER para confirmar.\n");
     scanf("%d", &Populacao1);
     printf("Digite a área total da cidade, em km2. Pressione ENTER para confirmar.\n");
@@ -43,7 +43,7 @@ int main(void){
     scanf("%d%*c", &Pts_Turisticos1); // Modificador '%*c' para limpar buffer para o próximo 'scanf'
     
     printf("\nCadastro CARTA 2\n");
-    printf("Digite o Estado, com 1 caracter apenas. Pressione ENTER para confirmar.\n");
+    printf("Digite o Estado, com 1 caractere apenas. Pressione ENTER para confirmar.\n");
     printf("[Digite uma letra (entre A e H)]\n");
     scanf("%c", &Estado2);
     printf("Digite o código da carta, com 3 caracteres. Pressione ENTER para confirmar.\n");
@@ -52,13 +52,12 @@ int main(void){
 /* No 'scanf' acima, atribui-se na expressão de controle um especificador de tamanho máximo de caracteres
    a serem lidos, evitando um estouro na string "Cdg_Carta2" caso haja excesso de caracteres digitados. */
     scanf("%*c");
-/* O 'scanf' serve para limpar o '\n' do buffer de entrada de dados e não causar um problema no 'fgets' abaixo. */
+/* O 'scanf' acima limpa o '\n' do buffer de entrada de dados, para não causar um problema no 'fgets' abaixo. */
     printf("Digite o nome da Cidade. Pressione ENTER para confirmar.\n");
     fgets(Nome_Cidade2, sizeof(Nome_Cidade2), stdin);
 /* Opta-se por usar o 'fgets', na linha acima, para lidar melhor com a entrada de nomes com espaços. */
     Nome_Cidade2[strcspn(Nome_Cidade2, "\n")] = '\0';
-/* Instrução acima utilizada para trocar '\n' por um '\0' na string 'Nome_Cidade1'
-   e não "poluir" a impressão em tela.*/
+/* Instrução acima utilizada para trocar '\n' por um '\0' na string 'Nome_Cidade2 e não "poluir" a impressão em tela.*/
     printf("Digite o número total de habitantes da cidade. Pressione ENTER para confirmar.\n");
     scanf("%d", &Populacao2);
     printf("Digite a área total da cidade, em km2. Pressione ENTER para confirmar.\n");
